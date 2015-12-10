@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:rim="http://www.blackberry.com/ns/widgets"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="GDD-plugin-localNoti"
+    version="0.1">
+    <name>LocalNoti</name>
+	<description>Cordova Local Notification Plugin</description>
+	<license>Apache 2.0</license>
+	<keywords>cordova,local,notification</keywords>
+	<js-module src="www/localnoti.js" name="localNotification">
+        <clobbers target="localNotification" />
+    </js-module>
+    <platform name="ios">
+		<config-file target="config.xml" parent="/*">
+            <feature name="LocalNotification">
+                <param name="ios-package" value="CDVGDDLocalNotification"/>
+            </feature>
+        </config-file>
+        <header-file src="src/ios/AppDelegate+localNotification.h" />
+        <source-file src="src/ios/AppDelegate+localNotification.m" />
+        <header-file src="src/ios/CDVGDDLocalNotification.h" />
+        <source-file src="src/ios/CDVGDDLocalNotification.m" />
+	</platform>
+</plugin>
