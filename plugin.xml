@@ -2,24 +2,22 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:rim="http://www.blackberry.com/ns/widgets"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    id="GDD-plugin-localNoti"
+    id="cordova-plugin-ios-background"
     version="0.1">
-    <name>LocalNoti</name>
-	<description>Cordova Local Notification Plugin</description>
+    <name>BackgroundTask</name>
+	<description>Cordova background task plugin</description>
 	<license>Apache 2.0</license>
-	<keywords>cordova,local,notification</keywords>
-	<js-module src="www/localnoti.js" name="localNotification">
-        <clobbers target="localNotification" />
+	<keywords>cordova,background,task</keywords>
+	<js-module src="www/bgTask.js" name="BgTask">
+        <clobbers target="bgTask"/>
     </js-module>
     <platform name="ios">
 		<config-file target="config.xml" parent="/*">
-            <feature name="LocalNotification">
-                <param name="ios-package" value="CDVGDDLocalNotification"/>
+            <feature name="BackgroundTask">
+                <param name="ios-package" value="BackgroundTask"/>
             </feature>
         </config-file>
-        <header-file src="src/ios/AppDelegate+localNotification.h" />
-        <source-file src="src/ios/AppDelegate+localNotification.m" />
-        <header-file src="src/ios/CDVGDDLocalNotification.h" />
-        <source-file src="src/ios/CDVGDDLocalNotification.m" />
+        <header-file src="src/ios/BackgroundTask.h" />
+        <source-file src="src/ios/BackgroundTask.m" />
 	</platform>
 </plugin>

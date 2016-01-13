@@ -2,6 +2,6 @@
 #import <Cordova/CDV.h>
 #import <Cordova/CDVPlugin.h>
 
-@interface CDVGDDLocalNotification : CDVPlugin
--(void) noti:(CDVInvokedUrlCommand*)command;
+@interface BackgroundTask : CDVPlugin
+-(void) begin:(CDVInvokedUrlCommand*)command;
 @end
